@@ -1,9 +1,7 @@
-import sayHello from './generalFunctions';
-import {getTaskForToday}  from './generalFunctions'
-import {startNewChallenge} from './generalFunctions'
-import {getActualAchievements} from './generalFunctions'
-import {getTaskArchive} from './generalFunctions'
-import {calculateAchievementsStatus} from './generalFunctions'
+import {getTaskForToday}  from './getTaskForToday'
+import {startNewChallenge} from './startNewChallenge'
+import {getActualAchievements} from './getActualAchievements'
+import {getTaskArchive} from './getTaskArchive'
 import tasks from '../DB/tasks.json';
 import achievements from '../DB/achievements.json';
 
