@@ -10,6 +10,7 @@
     "skipLibCheck": true,                           /* Skip type checking of declaration files. */
     "forceConsistentCasingInFileNames": true,        /* Disallow inconsistently-cased references to the same file. */
     "noImplicitAny": true,
+    "resolveJsonModule": true,
   },
   "exclude": [
     "**/*.spec.ts"
