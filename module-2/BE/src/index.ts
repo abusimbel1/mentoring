@@ -1,5 +1,5 @@
 import express, { Application, Request, Response, NextFunction } from 'express';
-import {getTasks} from './routes/generalFunctions'
+import {getTasks} from './routes/startNewChallenge'
 
 const app: Application = express();
 const PORT = 3333;

@@ -1,5 +1,4 @@
-{
-  "tasks": [
+[
     {"id": 1, "description": "Go to bed before 11:00 PM "},
     {"id": 2, "description": "Take a picture of a sunset "},
     {"id": 3, "description": "Make a small present for your friend without a reason"},
@@ -29,5 +28,4 @@
     {"id": 28, "description": "Play drawasaurus.org with your friends online "},
     {"id": 29, "description": "Take a picture of the most beautiful building on your street "},
     {"id": 30, "description": "Do you morning exercise for at least 20 minutes "}
-  ]
-}
+]

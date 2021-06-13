@@ -1,40 +1,41 @@
-interface Task {
+export interface Task {
   id: string;
   description: string;
 }
 
-interface Achievement {
+export interface Achievement {
   id: string;
   description: string;
   icon: string;
   checkComplete(taskStatus: Status): boolean;
 }
 
-interface Status {
+export interface Status {
   state: State;
-  updated: boolean;
+  updated: Date;
 }
 
-interface Challenge {
+export interface Challenge {
   id: string;
   state: State,
-  tasksOrder: [],
-  tasksStatus: Status,
-  achievementsStatus: []
+  tasksOrder: Task[],
+  date: Date,
+  achievementsStatus: Achievement[]
 }
 
-interface ArchiveItem extends Task {
+export interface ArchiveItem extends Task {
   status: Status
 }
 
-type TaskForToday = ArchiveItem
+export type TaskForToday = ArchiveItem
 
-interface ActualAchievement extends ArchiveItem {
-  image: string;
+export interface ActualAchievement extends ArchiveItem {
+  image?: string;
 }
 
-enum State {
-  Pending = 'Pending',
+
+export enum State {
+  InProgress = 'In Progress',
   Success = 'Success',
   Failure = 'Failure'
 }
