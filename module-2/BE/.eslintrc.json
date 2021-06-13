@@ -1,7 +1,8 @@
 {
     "plugins": [
         "@typescript-eslint",
-        "prettier"
+        "prettier",
+        "eslint-plugin-tsdoc"
     ],
     "extends": [
         "standard", "airbnb", "prettier", "plugin:node/recommended"
@@ -9,7 +10,7 @@
     "rules": {
         "prettier/prettier": "off",
         "no-unused-vars": "warn",
-        "no-console": "off",
+        "no-console": "error",
         "func-names": "off",
         "no-process-exit": "off",
         "object-shorthand": "off",
@@ -23,8 +24,14 @@
         "import/newline-after-import": "warn",
         "import/no-unresolved": "warn",
         "import/extensions": "warn",
+        "no-param-reassign": "warn",
+        "dot-notation":"warn",
+        "no-shadow":"warn",
         "node/no-missing-import": "warn",
-        "no-undef": "warn"
+        "no-undef": "warn",
+        "quotes": ["warn", "single", {"allowTemplateLiterals": true}],
+        "no-multi-spaces": "error",
+        "no-use-before-define": ["off", { "functions": false }]
     },
     "parserOptions": {
         "sourceType": "module"
