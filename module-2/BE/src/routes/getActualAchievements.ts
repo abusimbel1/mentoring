@@ -1,9 +1,8 @@
-import { findById } from "../features";
+import { findById } from '../features';
 import * as challenges from '../DB/challenges.json'
-import { ActualAchievement } from "../interfaces";
-import { checkAchivementsStatus } from "./checkAchievements";
+import { ActualAchievement } from '../interfaces';
 
 export const getActualAchievements = (challengeId: string): ActualAchievement[] => {
-  const challenge:any = findById(challenges.challenges as [], challengeId)
-  return challenge.achievementsStatus.map((item:any) => checkAchivementsStatus(item.id, challenge)) //TODO refactor due to the future structure
+  const challenge:any = findById(challenges.challenges, challengeId);
+  return challenge.achievementsStatus; // TODO refactor due to the future structure
 }

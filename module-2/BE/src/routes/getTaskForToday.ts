@@ -1,13 +1,17 @@
 import { findById } from "../features";
 import * as challenges from '../DB/challenges.json'
 import { State, TaskForToday } from "../interfaces";
+import { Challenge } from "../interfaces/challenge";
 
 export const getTaskForToday = (challengeId: string): TaskForToday => {
-  const challenge: any = findById(challenges.challenges as [], challengeId)
-  const task:any = challenge[(parseInt((new Date().getTime() - challenge.date).toString()))-1]
+  const challenge: Challenge = findById(challenges.challenges, challengeId)
+  const currentDay = parseInt(challenge.date.substring(5,7))  //TODO
+  const task:any = challenge.tasksOrder[currentDay]
   return {
     ...task,
-    status: State.InProgress,
-    updated: new Date()
-  } as TaskForToday
-}
+    status: {
+      state: State.InProgress,
+      updated: new Date().toISOString()
+    }
+  }
+};

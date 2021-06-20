@@ -1,9 +1,7 @@
-{
-  "achievements": [
-    {"id": 1, "description": "Complete each task 7 days in a row ", "icon": "undefined"},
-    {"id": 2, "description": "Complete five tasks before 8:00 AM", "icon": "undefined"},
-    {"id": 3, "description": "Complete first task", "icon": "undefined"},
-    {"id": 4, "description": "Complete half of the tasks", "icon": "undefined"},
-    {"id": 5, "description": "Complete all tasks", "icon": "undefined"}
-  ]
-}
+[
+    {"id": 1, "description": "Complete each task 7 days in a row ", "icon": "undefined", "type": "sevenDaysInARow"},
+    {"id": 2, "description": "Complete five tasks before 8:00 AM", "icon": "undefined", "type": "completeFiveBeforeEight"},
+    {"id": 3, "description": "Complete first task", "icon": "undefined", "type": "compleateFirstTask"},
+    {"id": 4, "description": "Complete half of the tasks", "icon": "undefined", "type": "completeHalf"},
+    {"id": 5, "description": "Complete all tasks", "icon": "undefined", "type": "completeAll"}
+]

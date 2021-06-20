@@ -1,8 +1,6 @@
-import { Task } from "./interfaces";
-
 export const shuffle = (array: any[]) => {
-  let currentIndex = array.length,  randomIndex;
-  while (0 !== currentIndex) {
+  let currentIndex = array.length; let randomIndex;
+  while (currentIndex !== 0) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
 
@@ -13,4 +11,4 @@ export const shuffle = (array: any[]) => {
   return array;
 }
 
-export const findById = (array: [],id: string) => array.find(item => item === id)
+export const findById = (array: any,id: string) => array.find(item => item === id)
