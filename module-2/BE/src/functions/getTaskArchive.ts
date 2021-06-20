@@ -4,5 +4,5 @@ import { State } from '../interfaces'
 
 export const getTaskArchive = (challengeId: string) => {
   const challenge:any = findById(challenges.challenges, challengeId)
-  return challenge.tasksOrder.filter(task => task.status.state !== State.InProgress)
+  return challenge.tasksOrder.filter((task: any) => task.status.state !== State.InProgress)
 }

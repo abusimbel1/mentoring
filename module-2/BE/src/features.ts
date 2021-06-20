@@ -11,4 +11,4 @@ export const shuffle = (array: any[]) => {
   return array;
 }
 
-export const findById = (array: any,id: string) => array.find(item => item === id)
+export const findById = (array: any,id: string) => array.find((item: any) => item === id)

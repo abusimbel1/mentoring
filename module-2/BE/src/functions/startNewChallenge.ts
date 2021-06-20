@@ -7,7 +7,7 @@ import { Task } from '../interfaces/task';
 import { shuffle } from '../features';
 import { checkSevenDaysInARow, checkCompleteFiveBeforeEight, checkCompleateFirstTask, checkCompleteHalf, checkCompleteAll } from './checkAchievements';
 
-const allCheckCompleteFuncs = {
+const allCheckCompleteFuncs: any = {
   sevenDaysInARow: checkSevenDaysInARow,
   completeFiveBeforeEight: checkCompleteFiveBeforeEight,
   compleateFirstTask: checkCompleateFirstTask,
@@ -20,7 +20,7 @@ const getShuffledAchievements = (achievements: Achievement[], numberOfAchievemen
   const achievementsToShuffle = achievements.slice(0, achievements.length-2);
   const shuffledAchievements = shuffle(achievementsToShuffle);
   const allShuffledAchievements = shuffledAchievements.slice(0, numberOfAchievements-2).concat(achievements.slice(-2));
-  return allShuffledAchievements.map(achievement => {
+  return allShuffledAchievements.map((achievement: any) => {
     achievement.checkComplete = allCheckCompleteFuncs[achievement.type];
     achievement.status = {state: State.InProgress, updated: new Date().toISOString()};  //TODO mb it no needed
     return achievement;
@@ -32,13 +32,13 @@ export const startNewChallenge = (tasks: Task[], achievements: Achievement[], du
   const date: string = new Date().toISOString();
   const tasksOrder: Task[] = shuffle(tasks).slice(-duration);
   const achievementsStatus: Achievement[] = getShuffledAchievements(achievements, numOfAchievements);
-  const tasksStatus: any = tasksOrder.map(task => {
+  const tasksStatus: any = tasksOrder.map((task: any) => {
     task.status = {state: State.InProgress, updated: new Date().toISOString()};
     return task;
   })
 
   return {
-    id: '', //TODO refactor after node part
+    id: '123', //TODO refactor after node part
     state: State.InProgress,
     tasksOrder,
     date,

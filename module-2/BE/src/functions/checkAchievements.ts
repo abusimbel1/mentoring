@@ -6,7 +6,7 @@ const failure = {state: State.Failure, updated: new Date().toISOString()};
 
 export const checkSevenDaysInARow = (tasksStatus: any): Status => {
 
-  const numOfDoneInARow = tasksStatus.reduce((acc, task) => task.status.state === State.Success ? acc+1 : 0, 0);
+  const numOfDoneInARow = tasksStatus.reduce((acc: number, task: any) => task.status.state === State.Success ? acc+1 : 0, 0);
 
   if (numOfDoneInARow > 6) {
     return success;
@@ -16,7 +16,7 @@ export const checkSevenDaysInARow = (tasksStatus: any): Status => {
 };
 
 export const checkCompleteFiveBeforeEight = (tasksStatus: any): Status => {
-  const numOfCompleated = tasksStatus.reduce((acc, task) => task.status.state === State.Success && task.status.updated < 8 ? acc+1 : acc,0);
+  const numOfCompleated = tasksStatus.reduce((acc: number, task: any) => task.status.state === State.Success && task.status.updated < 8 ? acc+1 : acc,0);
   
   if (numOfCompleated > 4) return success;
 
@@ -30,7 +30,7 @@ export const checkCompleateFirstTask = (tasksStatus: any): Status => {
 };
 
 export const checkCompleteHalf = (tasksStatus: any): Status => {
-  const numOfCompleated = tasksStatus.reduce((acc, task) => task.status.state === State.Success ? acc+1 : acc, 0)
+  const numOfCompleated = tasksStatus.reduce((acc: number, task: any) => task.status.state === State.Success ? acc+1 : acc, 0)
 
   if (numOfCompleated > Number(tasksStatus.length / 2)) return success;
 
@@ -38,7 +38,7 @@ export const checkCompleteHalf = (tasksStatus: any): Status => {
 };
 
 export const checkCompleteAll = (tasksStatus: any): Status => {
-  const isSomeNotDone = tasksStatus.find(task => task.status.state !== State.Success);
+  const isSomeNotDone = tasksStatus.find((task: any) => task.status.state !== State.Success);
 
   if (isSomeNotDone) return failure;
 

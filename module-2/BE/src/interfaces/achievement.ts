@@ -4,5 +4,5 @@ export interface Achievement {
   id: string;
   description: string;
   icon: string;
-  checkComplete(taskStatus: Status): boolean;
+  checkComplete?: (taskStatus: Status) => boolean;
 }
