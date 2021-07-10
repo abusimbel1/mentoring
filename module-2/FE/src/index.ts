@@ -1,15 +1,22 @@
 import './style.scss'
+import { io } from 'socket.io-client'
 
-// function sum(a: number, b: number) {
-//   return a + b;
-// }
-const a = 1
-const h1 = document.createElement('h1')
-document.body.appendChild(h1)
-const newH1 = document.querySelector('h1')
-newH1?.setAttribute('id', 'title')
-if (newH1) {
-  newH1.innerHTML = 'Hello1222!'
-}
+const compleateButton = document.createElement('button')
+document.body.appendChild(compleateButton)
+// const newH1 = document.querySelector('h1');
+compleateButton?.setAttribute('id', 'compleateButton')
+compleateButton.innerHTML = 'Compleate challenge!'
 
-// module.exports = sum;
+// const compleateButton = document.getElementById('compleateButton');
+
+const socked = io('http://localhost:3333')
+
+socked.on('connected', () => {})
+
+socked.on('achieventsStatuses', (data) => {
+  console.log('Current statuses is:', data)
+})
+
+compleateButton?.addEventListener('click', () => {
+  socked.emit('taskCompleated', 'challenge id')
+})

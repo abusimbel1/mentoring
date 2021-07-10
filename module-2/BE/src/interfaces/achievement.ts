@@ -1,4 +1,4 @@
-import { Status } from "../interfaces";
+import { Status } from '../interfaces';
 
 export interface Achievement {
   id: string;
