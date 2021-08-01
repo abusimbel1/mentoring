@@ -28,21 +28,30 @@ const getShuffledAchievements = (achievements: Achievement[], numberOfAchievemen
 }
 
 
-export const startNewChallenge = (tasks: Task[], achievements: Achievement[], duration: number = 30, numOfAchievements: number = parseInt((duration/6).toString())): Challenge => {
-  const date: string = new Date().toISOString();
-  const tasksOrder: Task[] = shuffle(tasks).slice(-duration);
-  const achievementsStatus: Achievement[] = getShuffledAchievements(achievements, numOfAchievements);
+export const startNewChallenge = (tasks: any, achievements: any, duration: number = 30, numOfAchievements: number = parseInt((duration/6).toString())): Challenge => {
+  const tasksOrder: any = shuffle(tasks).slice(-duration);
+  const achievementsStatus: any = getShuffledAchievements(achievements, numOfAchievements).map((item: any) => {
+    return {
+      id: item.id,
+      description: item.description,
+      status: {state: State.InProgress, updated: new Date()},
+      checkComplete: () => true,
+    }
+  });
   const tasksStatus: any = tasksOrder.map((task: any) => {
-    task.status = {state: State.InProgress, updated: new Date().toISOString()};
-    return task;
+    const newTask = {
+      id:task.id,
+      description: task.description,
+      status: {state: State.InProgress, updated: new Date()}
+    }
+    return newTask;
   })
-
+  const tasksOrderToSend = tasksOrder.map((item: any) => item.id)
+  
   return {
-    id: '123', //TODO refactor after node part
     state: State.InProgress,
-    tasksOrder,
-    date,
+    tasksOrder: tasksOrderToSend,
     achievementsStatus,
     tasksStatus
-  } as Challenge
+  } as any
 };

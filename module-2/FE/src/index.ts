@@ -18,5 +18,9 @@ socked.on('achieventsStatuses', (data) => {
 })
 
 compleateButton?.addEventListener('click', () => {
-  socked.emit('taskCompleated', 'challenge id')
+  socked.emit(
+    'taskCompleated',
+    '61068e0408cc1f5a4215fe7b',
+    '61068373a4511a5218146753'
+  )
 })
