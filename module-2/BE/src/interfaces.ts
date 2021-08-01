@@ -1,4 +1,4 @@
-import { Task } from "./interfaces/task";
+import { Task } from './interfaces/task';
 
 export interface Status {
   state: State;
