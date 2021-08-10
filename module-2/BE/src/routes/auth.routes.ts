@@ -10,7 +10,6 @@ const _router = Router();
 _router.post('/login', async (req: Request, res: Response) => {
   try {
     const { email, password }: any = req.body;
-    console.log(req.body)
     const user = await User.findOne({ email });
 
     if (!user) {

@@ -33,6 +33,14 @@ router.post(
   auth,
   async (req: any, res: Response, next: NextFunction) => {
     try {
+      const challenge = await Challenge.findOne({
+        owner: req.user.userId,
+        state: 'In Progress',
+      });
+  
+      if (challenge) {
+        return res.status(400).json({ message: "Challenge alreadu in progress" });
+      }
       const defaultDuration: number = 30;
       const { duration = 30, numOfAchievements = Number(defaultDuration / 6) } =
         req.query;
