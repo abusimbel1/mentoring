@@ -1,0 +1,19 @@
+{
+  "achievements": [
+    {
+      "description": "Complete each task 7 days in a row "
+    },
+    {
+      "description": "Complete five tasks before 8:00 AM"
+    },
+    {
+      "description": "Complete first task"
+    },
+    {
+      "description": "Complete half of the tasks"
+    },
+    {
+      "description": "Complete all tasks"
+    }
+  ]
+}
